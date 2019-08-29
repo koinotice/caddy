@@ -1,3 +1,17 @@
-:80
-log stdout
-errors stdout
+git.pmker.com {
+
+    proxy / http://0.0.0.0:10080 {
+        transparent
+        websocket
+        header_downstream Access-Control-Allow-Origin "*"
+        }
+}
+
+lrc.pmker.com {
+
+    proxy / http://0.0.0.0:3100 {
+        transparent
+        websocket
+      header_downstream Access-Control-Allow-Origin "*"
+        }
+}
