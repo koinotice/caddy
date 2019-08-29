@@ -1,0 +1,9 @@
+version: '3'
+services:
+  caddy:
+    build: "."
+    volumes:
+      - ./.caddy:/root/.caddy # to sync mkcert certificates to Caddy
+      - ./Caddyfile:/etc/Caddyfile  # to mount custom Caddyfile
+    ports:
+      - "443:2015"
